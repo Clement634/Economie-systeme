@@ -2,5 +2,5 @@
 système d’économie pour bot discord avec la librairie Discord.js
 
 # Dépendences
-discord.js
-quick.db
+* discord.js
+* quick.db
