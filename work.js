@@ -10,7 +10,12 @@ class work extends Command {
       category: "Economie"
     });
   }
-  if (args[0] === work[1] || work[2] || work[5] || work[8] || work[9]) {
+  async run(message, args) {
+    try {
+      let user = message.author;
+      let work = ["développeur", "barman", "boucher", "pilote", "graphiste", "mineur", "policier", "pompier", "abatteur", "vigneron"];
+      
+      if (args[0] === work[1] || work[2] || work[5] || work[8] || work[9]) {
     let salaire = 1;
     message.channel.send(`Votre travaille vous à raporté **${salaire}**$`);
     bot.money.add(`money_${user.id}`, salaire);
@@ -29,11 +34,6 @@ class work extends Command {
   } else {
     message.channel.send("Vous devez entré un métier valide, pour savoir nos métiers efféctué la commande test.workliste.");
   }
-  async run(message, args) {
-    try {
-      let user = message.author;
-      let work = ["développeur", "barman", "boucher", "pilote", "graphiste", "mineur", "policier", "pompier", "abatteur", "vigneron"];
-      
     } catch (e) {
       console.log(e);
     }
