@@ -18,7 +18,7 @@ class daily extends Command {
       let amount = Math.floor(Math.random() * 999) + 1;
       let daily = await db.fetch(`daily_${message.author.id}`);
 
-      if (daily !== null && timout - (Date.now() - daily) > 0) {
+      if (daily !== null && timeout - (Date.now() - daily) > 0) {
           let time = ms(timeout - (Date.now() - daily));
           message.channel.send(`Vous avez déjà récupéré votre récompense du jour.Revenez dans **${time.hours}h ${time.minutes}m ${time.seconds}** !`)
       } else {
