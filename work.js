@@ -16,20 +16,20 @@ class work extends Command {
       let work = ["développeur", "barman", "boucher", "pilote", "graphiste", "mineur", "policier", "pompier", "abatteur", "vigneron"];
       
       if (args[0] === work[1] || work[2] || work[5] || work[8] || work[9]) {
-    let salaire = 1;
+    let salaire = Math.floor(Math.random() * 100) + 1;
     message.channel.send(`Votre travaille vous à raporté **${salaire}**$`);
     bot.money.add(`money_${user.id}`, salaire);
   } else if (args[0] === work[0] || work[4]) {
-    let salaire2 = 2;
+    let salaire2 = Math.floor(Math.random() * 100) + 100;
       message.channel.send(`Votre travaille vous à raporté **${salaire2}**$`);
       bot.money.add(`money_${user.id}`, salaire2);
   } else if (args[0] === work[3] || work[6] || work[7]) {
-    let salaire3 = 3;
+    let salaire3 = Math.floor(Math.random() * 200) + 100;
     message.channel.send(`Votre travaille vous à raporté **${salaire3}**$`);
     bot.money.add(`money_${user.id}`, salaire3);
-  } else if (args[0] === "mendiant") {
-    let salaire4 = 4;
-    message.channel.send(`Vous mendiez et cela vous rapporte **${salaire4}**$`);
+  } else if (args[0] === "prostitué") {
+    let salaire4 = Math.floor(Math.random() * 100) + 1;
+    message.channel.send(`Vous faite le tapin et cela vous rapporte **${salaire4}**$`);
     bot.money.add(`money_${user.id}`, salaire4);
   } else {
     message.channel.send("Vous devez entré un métier valide, pour savoir nos métiers efféctué la commande test.workliste.");
