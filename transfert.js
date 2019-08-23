@@ -29,8 +29,8 @@ class transfert extends Command {
             return message.channel.send('Vous devez avoir de l\'argent pour faire un transfert.' )
         }
         message.channel.send(`${message.author}, vous venez de donner **${args[1]}**$ à ${user.user.username}`)
-        db.add(`money_${user.id}, args[1]`)
-        db.subtract(`money_${message.author.id}, args[1]`)
+        db.add(`money_${user.id}`, args[1])
+        db.subtract(`money_${message.author.id}`, args[1])
     } catch (e) {
       console.log(e);
     }
